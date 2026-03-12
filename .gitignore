@@ -1,8 +1,20 @@
+# Hexo generated files
+/public
+/db.json
+*.log
+
+# Dependencies
+/node_modules
+
+# Theme (will be cloned separately)
+/themes/keep
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
 .DS_Store
 Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-_multiconfig.yml
