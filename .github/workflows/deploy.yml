@@ -12,7 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Node.js
@@ -23,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          git clone https://github.com/XPoet/hexo-theme-keep.git themes/keep
+          git clone --depth 1 https://github.com/XPoet/hexo-theme-keep.git themes/keep
 
       - name: Generate static files
         run: npx hexo generate
@@ -33,4 +32,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          force_orphan: true
+          force_orphan: false
